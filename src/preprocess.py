@@ -1,7 +1,7 @@
 import pandas as pd
 import sqlite3
 
-# Load and clean data
+# Loading and cleaning the data
 df = pd.read_csv('../data/hotel_bookings.csv')
 df['country'].fillna('Unknown', inplace=True)
 df.dropna(subset=['adr'], inplace=True)
@@ -15,7 +15,7 @@ df['arrival_date'] = pd.to_datetime(
 df['revenue'] = df['adr'] * (df['stays_in_weekend_nights'] + df['stays_in_week_nights'])
 df.dropna(subset=['arrival_date'], inplace=True)
 
-# Store in SQLite
+# Storing in SQLite
 conn = sqlite3.connect('../db/bookings.db')
 df.to_sql('bookings', conn, if_exists='replace', index=False)
 conn.close()

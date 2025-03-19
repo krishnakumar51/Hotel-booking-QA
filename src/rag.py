@@ -1,12 +1,10 @@
-# Hotel-booking-QA/src/rag.py
 import pandas as pd
 import sqlite3
 from sentence_transformers import SentenceTransformer
 import faiss
 import numpy as np
 
-# Load data
-conn = sqlite3.connect('../db/bookings.db')  # Connect to the database
+conn = sqlite3.connect('../db/bookings.db')  
 df = pd.read_sql_query("SELECT * FROM bookings", conn, parse_dates=['arrival_date'])
 conn.close()
 
@@ -26,5 +24,5 @@ embeddings = model.encode(descriptions, show_progress_bar=True)
 dimension = embeddings.shape[1]
 index = faiss.IndexFlatL2(dimension)
 index.add(embeddings.astype(np.float32))
-faiss.write_index(index, '../models/bookings_index.faiss')  # Write index after creating it
+faiss.write_index(index, '../models/bookings_index.faiss') 
 print("FAISS index created at ../models/bookings_index.faiss")

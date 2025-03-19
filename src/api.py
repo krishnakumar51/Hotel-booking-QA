@@ -1,4 +1,3 @@
-# Hotel-booking-QA/src/api.py
 from fastapi import FastAPI
 from langchain_groq import ChatGroq
 from langchain_core.messages import HumanMessage

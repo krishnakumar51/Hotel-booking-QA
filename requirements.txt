@@ -1,0 +1,10 @@
+pandas==2.2.2
+sentence-transformers==3.0.1
+faiss-cpu==1.8.0
+langchain==0.2.16
+langchain-groq==0.1.9
+fastapi==0.112.2
+uvicorn==0.30.6
+streamlit==1.38.0
+requests==2.32.3
+python-dotenv==1.0.1

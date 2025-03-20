@@ -25,20 +25,6 @@ This project is a Question-Answering (QA) and Analytics system built for the "Ho
    ```bash
    pip install -r requirements.txt
    ```
-   Required packages (add to `requirements.txt`):
-   ```
-    pandas==2.2.2
-    sentence-transformers==3.0.1
-    faiss-cpu==1.8.0
-    langchain==0.2.16
-    langchain-groq==0.1.9
-    fastapi==0.112.2
-    uvicorn==0.30.6
-    streamlit==1.38.0
-    requests==2.32.3
-    python-dotenv==1.0.1
-   ```
-
 3. **Set Up Environment**
    - Create a `.env` file in the root directory:
      ```
@@ -49,12 +35,13 @@ This project is a Question-Answering (QA) and Analytics system built for the "Ho
 4. **Run the API**
    ```bash
    cd src
-   uvicorn src.api:app --reload
+   uvicorn api:app --reload
    ```
 
 5. **Run the Streamlit Frontend**
    ```bash
-   streamlit run src/app.py
+   cd src
+   streamlit run app.py
    ```
    - Access the app at `http://localhost:8501`.
 
